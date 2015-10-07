@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/userinfo.do" location="60,120" dimension="250,104" />
+  <StrutsActivity path="/mrinfo.do" location="405,120" dimension="250,104" />
+  <StrutsActivity path="/minfo.do" location="195,405" dimension="235,104" />
+  <StrutsActivity path="/firstPage.jsp" location="50,650" dimension="108,53" />
+  <StrutsActivity path="/edit.jsp" location="315,30" dimension="79,53" />
+  <StrutsActivity path="/userInfoAdmin.jsp" location="105,30" dimension="142,53" />
+  <StrutsActivity path="/success.jsp" location="285,255" dimension="150,100" />
+  <StrutsActivity path="/firstPageUpdate.jsp" location="950,650" dimension="151,53" />
+  <StrutsActivity path="/user_preBook.jsp" location="465,315" dimension="138,53" />
+  <StrutsActivity path="/editMeetingroom.jsp" location="765,75" dimension="159,53" />
+  <StrutsActivity path="/mrInfoAdmin.jsp" location="450,30" dimension="133,53" />
+  <StrutsActivity path="/user_myBook.jsp" location="650,650" dimension="135,53" />
+  <StrutsActivity path="/editBook.jsp" location="255,585" dimension="110,53" />
+  <StrutsActivity path="/meetInfoAdmin.jsp" location="555,450" dimension="146,53" />
+  <StrutsActivity path="/insertBook.jsp" location="45,435" dimension="120,53" />
+  <StrutsActivity path="/listBook.jsp" location="950,450" dimension="104,53" />
+  <StrutsActivity path="/index.jsp" location="720,180" dimension="88,53" />
+  <StrutsActivity path="/list.jsp" location="585,360" dimension="73,53" />
+  <StrutsActivity path="/insert.jsp" location="825,315" dimension="89,53" />
+  <StrutsActivity path="/book_user.jsp" location="350,650" dimension="118,53" />
+  <StrutsActivity path="/login.jsp" location="50,850" dimension="86,53" />
+  <StrutsActivity path="/myMinfo.do" location="350,850" dimension="252,104" />
+  <StrutsTransition id="/insertBook.jsp,null,/minfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,457" />
+      <AbsolutePoint location="195,457" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userInfoAdmin.jsp,null,/userinfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,83" />
+      <AbsolutePoint location="185,120" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myMinfo.do,list,/user_myBook.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="602,902" />
+      <AbsolutePoint location="717,902" />
+      <AbsolutePoint location="717,703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mrinfo.do,list,/mrInfoAdmin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="486,120" />
+      <AbsolutePoint location="486,83" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userinfo.do,edit,/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="310,172" />
+      <AbsolutePoint location="354,172" />
+      <AbsolutePoint location="354,83" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mrInfoAdmin.jsp,null,/mrinfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="516,83" />
+      <AbsolutePoint location="516,120" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mrinfo.do,listMeetroomUser,/user_preBook.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="534,224" />
+      <AbsolutePoint location="534,315" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userinfo.do,firstPageUpdate,/firstPageUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,172" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mrinfo.do,success,/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="420,224" />
+      <AbsolutePoint location="420,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userinfo.do,list,/userInfoAdmin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="215,120" />
+      <AbsolutePoint location="215,83" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myMinfo.do,edit,/editBook.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,888" />
+      <AbsolutePoint location="310,888" />
+      <AbsolutePoint location="310,638" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/minfo.do,edit,/editBook.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="310,509" />
+      <AbsolutePoint location="310,585" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/minfo.do,listMyBook,/user_myBook.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="312,457" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/minfo.do,list,/meetInfoAdmin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="430,476" />
+      <AbsolutePoint location="555,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mrinfo.do,edit,/editMeetingroom.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="546,120" />
+      <AbsolutePoint location="546,101" />
+      <AbsolutePoint location="765,101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userinfo.do,success,/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="295,224" />
+      <AbsolutePoint location="295,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userinfo.do,userlogin,/firstPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,172" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userinfo.do,adminlogin,/firstPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,172" />
+      <AbsolutePoint location="104,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myMinfo.do,list,/meetInfoAdmin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="587,850" />
+      <AbsolutePoint location="587,503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myMinfo.do,listMyBook,/user_myBook.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="483,850" />
+      <AbsolutePoint location="483,676" />
+      <AbsolutePoint location="650,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

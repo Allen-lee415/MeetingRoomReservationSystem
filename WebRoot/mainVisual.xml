@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='euc-kr'?>
+<contentsRotator>
+<item order='1' category='E' type='image' title='00000000' image='zsimg/01.jpg' source='user_Book.jsp?id=MR001' target='_self' />
+<item order='2' category='E' type='image' title='111111111' image='zsimg/02.jpg' source='user_Book.jsp?id=MR002' target='_self' />
+<item order='3' category='E' type='image' title='22222222' image='zsimg/03.jpg' source='user_Book.jsp?id=MR003' target='' />
+<item order='4' category='E' type='image' title='333333333' image='zsimg/04.jpg' source='user_Book.jsp?id=MR004' target='_self' />
+<item order='5' category='E' type='image' title='4444444' image='zsimg/05.jpg' source='user_Book.jsp?id=MR005' />
+<item order='6' category='S' type='image' title='5555555' image='zsimg/06.jpg' source='user_Book.jsp?id=MR006' target='' />
+<item order='7' category='S' type='video' title='666666666' image='zsimg/07.jpg' source='user_Book.jsp?id=MR007' />
+<item order='8' category='S' type='video' title='7777777777' image='zsimg/08.jpg' source='user_Book.jsp?id=MR008' />
+<item order='9' category='B' type='image' title='8888888888' image='zsimg/09.jpg' source='user_Book.jsp?id=MR009' target='' />
+<item order='10' category='B' type='image' title='99999999' image='zsimg/10.jpg' source='user_Book.jsp?id=MR010' target='' />
+<item order='11' category='B' type='image' title='10101010' image='zsimg/11.jpg' source='user_Book.jsp?id=MR011' target='' />
+</contentsRotator>

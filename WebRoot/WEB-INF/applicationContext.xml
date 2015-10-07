@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306"></property>
+		<property name="username" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/ssh/hibernate/Userinfo.hbm.xml</value>
+				<value>com/ssh/hibernate/Meetingroominfo.hbm.xml</value>
+				<value>com/ssh/hibernate/Meetinginfo.hbm.xml</value></list>
+		</property></bean>
+	<!-- userinfo start -->
+	<bean id="UserinfoDAO" class="com.ssh.hibernate.UserinfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userinfo" class="com.ssh.hibernate.Userinfo"></bean>
+	
+	<bean name="/userinfo" class="com.ssh.struts.action.UserinfoAction">
+	<property name="uiDao">
+	       <ref bean="UserinfoDAO"/>
+	</property>
+	<property name="user">
+	       <ref bean="userinfo"/>
+	</property>
+	</bean>
+	<!-- userinfo End -->
+	
+	<!-- meetingroominfo Start -->
+	<bean id="MeetingroominfoDAO"
+		class="com.ssh.hibernate.MeetingroominfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		
+	</bean>
+	
+	<bean id="mrinfo" class="com.ssh.hibernate.Meetingroominfo"></bean>
+	
+	<bean name="/mrinfo" class="com.ssh.struts.action.MRinfoAction">
+	<property name="mrDao">
+	       <ref bean="MeetingroominfoDAO"/>
+	</property>
+	<property name="mr">
+	       <ref bean="mrinfo"/>
+	</property>
+	</bean>
+	<!-- meetingroominfo End -->
+	
+	<!-- meetinginfo start -->
+	<bean id="MeetinginfoDAO"
+		class="com.ssh.hibernate.MeetinginfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		<!--bar chart通过用户名查出会议室名 start 6-18 -->
+			<property name="udao">
+			<ref bean="UserinfoDAO" />
+		</property>
+			<!-- bar chart通过用户名查出会议室名 End 6-18-->
+	</bean>	
+	<bean id="minfo" class="com.ssh.hibernate.Meetinginfo"></bean>
+	
+	<bean name="/minfo" class="com.ssh.struts.action.MinfoAction">
+	<property name="mDao">
+	       <ref bean="MeetinginfoDAO"/>
+	</property>
+	<property name="meet">
+	       <ref bean="minfo"/>
+	</property>
+	
+	<property name="uiDao">
+	       <ref bean="UserinfoDAO"/>
+	</property>
+	<property name="userinfo">
+	       <ref bean="userinfo"/>
+	</property>
+	<property name="mrDao">
+	       <ref bean="MeetingroominfoDAO"/>
+	</property>
+	<property name="mrinfo">
+	       <ref bean="mrinfo"/>
+	</property>
+	
+	</bean>
+	<!-- meetinginfo End -->
+	<!-- chart start 6-17 -->
+		<bean id="chart"
+		class="com.servlet.DataUtils">
+		<property name="mdaoC">
+			<ref bean="MeetinginfoDAO" />
+		</property>
+	</bean>	
+	<!-- chart End 6-17-->
+	
+	
+	<!-- myMeetinginfo 6-20-->
+	
+	
+	<bean name="/myMinfo" class="com.ssh.struts.action.MyMinfoAction">
+	<property name="mDao">
+	       <ref bean="MeetinginfoDAO"/>
+	</property>
+	<property name="meet">
+	       <ref bean="minfo"/>
+	</property>
+	
+	<property name="uiDao">
+	       <ref bean="UserinfoDAO"/>
+	</property>
+	<property name="userinfo">
+	       <ref bean="userinfo"/>
+	</property>
+	<property name="mrDao">
+	       <ref bean="MeetingroominfoDAO"/>
+	</property>
+	<property name="mrinfo">
+	       <ref bean="mrinfo"/>
+	</property>
+	
+	</bean>
+	<!-- end myMeetinginfo 6-20-->
+	
+	
+
+	
+	</beans>

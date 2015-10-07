@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="userinfoForm" type="com.ssh.struts.form.UserinfoForm" />
+    <form-bean name="mrinfoForm" type="com.ssh.struts.form.MRinfoForm" />
+    <form-bean name="minfoForm" type="com.ssh.struts.form.MinfoForm" />
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="userinfoForm"
+      input="/userInfoAdmin.jsp"
+      parameter="action"
+      name="userinfoForm"
+      path="/userinfo"
+      scope="request"
+      type="com.ssh.struts.action.UserinfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/success.jsp" />
+      <forward name="list" path="/userInfoAdmin.jsp" />
+      <forward name="edit" path="/edit.jsp" />
+       <forward name="userlogin" path="/firstPage.jsp" />
+       <forward name="adminlogin" path="/firstPage.jsp" />
+       <forward name="firstPageUpdate" path="/firstPageUpdate.jsp" />
+    </action>
+     
+    
+    
+    
+    
+     <action
+      attribute="mrinfoForm"
+      input="/mrInfoAdmin.jsp"
+      parameter="action"
+      name="mrinfoForm"
+      path="/mrinfo"
+      scope="request"
+      type="com.ssh.struts.action.MRinfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/success.jsp" />
+      <forward name="list" path="/mrInfoAdmin.jsp" />
+      <forward name="edit" path="/editMeetingroom.jsp" />
+      <forward name="listMeetroomUser" path="/user_preBook.jsp" />
+    </action>
+    
+    <action
+      attribute="minfoForm"
+      input="/insertBook.jsp"
+       parameter="action"
+      name="minfoForm"
+      path="/minfo"
+      scope="request"
+      type="com.ssh.struts.action.MinfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="list" path="/meetInfoAdmin.jsp" />
+      <forward name="edit" path="/editBook.jsp" />
+      <forward name="listMyBook" path="/user_myBook.jsp" />
+    </action>
+    
+      <action
+      attribute="minfoForm"
+       parameter="action"
+      name="minfoForm"
+      path="/myMinfo"
+      scope="request"
+      type="com.ssh.struts.action.myMinfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="list" path="/user_myBook.jsp" />
+      <forward name="edit" path="/editBook.jsp" />
+      <forward name="listMyBook" path="/user_myBook.jsp" />
+    </action>
+
+  </action-mappings>
+  <controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+  <message-resources parameter="com.ssh.struts.ApplicationResources" />
+
+</struts-config>
+

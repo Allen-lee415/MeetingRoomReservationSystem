@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="myThirdSSH"
+  id="myeclipse.1397907804855"
+  context-root="/myThirdSSH"
+  j2ee-spec="1.4"
+  archive="myThirdSSH.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
